@@ -16,7 +16,7 @@ THUMB_TIP = 4
 INDEX_TIP = 8
 VOLUME_HAND = "Left"
 BRIGHTNESS_HAND = "Right"
-DISTANCE_RANGE = (0, 0.3)
+DISTANCE_RANGE = (0.05, 0.3)
 LERP_SPEED = 0.3
 
 def calculate_distance(p1, p2):
