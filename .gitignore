@@ -1,0 +1,5 @@
+*.egg-info/
+.env/
+venv/
+cam-env/
+__pycache__/
