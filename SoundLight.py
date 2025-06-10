@@ -20,16 +20,13 @@ DISTANCE_RANGE = (0.05, 0.3)
 LERP_SPEED = 0.3
 
 def calculate_distance(p1, p2):
-    """Вычисляет расстояние между двумя точками."""
     return math.sqrt((p1.x - p2.x)**2 + (p1.y - p2.y)**2)
 
 def normalize_value(distance, min_val=0, max_val=0.3):
-    """Нормализует расстояние в процентное значение (0-100%)."""
     clamped = max(min_val, min(distance, max_val))
     return int(((clamped - min_val) / (max_val - min_val)) * 100)
 
 def set_system_value(command, value):
-    """Устанавливает системные параметры."""
     try:
         subprocess.run(command + [f'{value}%'],
                         stdout=subprocess.DEVNULL,
@@ -39,11 +36,9 @@ def set_system_value(command, value):
         print(f"Ошибка выполнения команды: {e}")
 
 def linear_interpolate(current, target, speed):
-    """Плавно интерполирует значение к целевой величине."""
     return current + (target - current) * speed
 
 def draw_control_line(frame, start, end):
-    """Рисует линию управления между пальцами."""
     h, w, _ = frame.shape
     cv2.line(frame,
              (int(start.x * w), int(start.y * h)),
