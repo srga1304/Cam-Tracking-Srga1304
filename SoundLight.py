@@ -33,7 +33,7 @@ def set_system_value(command, value):
                         stderr=subprocess.DEVNULL,
                         check=True)
     except subprocess.CalledProcessError as e:
-        print(f"Ошибка выполнения команды: {e}")
+        print(f"error: {e}")
 
 def linear_interpolate(current, target, speed):
     return current + (target - current) * speed
@@ -48,7 +48,7 @@ def draw_control_line(frame, start, end):
 def main():
     cap = cv2.VideoCapture(0)
     if not cap.isOpened():
-        print("Ошибка: камера недоступна")
+        print("camera error")
         return
 
     # Текущие значения с плавным изменением
